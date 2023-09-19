@@ -1,0 +1,15 @@
+C:\platzi\SolutionCrud\ProjectCrud.DAL\bin\Debug\net7.0\ProjectCrud.DAL.deps.json
+C:\platzi\SolutionCrud\ProjectCrud.DAL\bin\Debug\net7.0\ProjectCrud.DAL.dll
+C:\platzi\SolutionCrud\ProjectCrud.DAL\bin\Debug\net7.0\ProjectCrud.DAL.pdb
+C:\platzi\SolutionCrud\ProjectCrud.DAL\obj\Debug\net7.0\ProjectCrud.DAL.csproj.AssemblyReference.cache
+C:\platzi\SolutionCrud\ProjectCrud.DAL\obj\Debug\net7.0\ProjectCrud.DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\platzi\SolutionCrud\ProjectCrud.DAL\obj\Debug\net7.0\ProjectCrud.DAL.AssemblyInfoInputs.cache
+C:\platzi\SolutionCrud\ProjectCrud.DAL\obj\Debug\net7.0\ProjectCrud.DAL.AssemblyInfo.cs
+C:\platzi\SolutionCrud\ProjectCrud.DAL\obj\Debug\net7.0\ProjectCrud.DAL.csproj.CoreCompileInputs.cache
+C:\platzi\SolutionCrud\ProjectCrud.DAL\obj\Debug\net7.0\ProjectCrud.DAL.dll
+C:\platzi\SolutionCrud\ProjectCrud.DAL\obj\Debug\net7.0\refint\ProjectCrud.DAL.dll
+C:\platzi\SolutionCrud\ProjectCrud.DAL\obj\Debug\net7.0\ProjectCrud.DAL.pdb
+C:\platzi\SolutionCrud\ProjectCrud.DAL\obj\Debug\net7.0\ref\ProjectCrud.DAL.dll
+C:\platzi\SolutionCrud\ProjectCrud.DAL\bin\Debug\net7.0\ProjectCrud.Models.dll
+C:\platzi\SolutionCrud\ProjectCrud.DAL\bin\Debug\net7.0\ProjectCrud.Models.pdb
+C:\platzi\SolutionCrud\ProjectCrud.DAL\obj\Debug\net7.0\ProjectCrud.DAL.csproj.CopyComplete
