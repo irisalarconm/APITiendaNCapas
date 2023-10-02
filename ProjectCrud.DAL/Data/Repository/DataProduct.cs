@@ -95,7 +95,7 @@ namespace ProjectCrud.DAL.Data.Repository
 
         public Product GetById(int id)
         {
-            Product product = null;
+            Product product = new Product();
 
             try
             {
@@ -112,11 +112,11 @@ namespace ProjectCrud.DAL.Data.Repository
                         {
                             product = new Product
                             {
-                                ProductId = Convert.ToInt32(reader["@ProductId"]),
-                                ClientId = Convert.ToInt32(reader["@ClientId"]),
-                                NameProduct = reader["@NameProduct"].ToString(),
-                                Description = reader["@Description"].ToString(),
-                                Price = Convert.ToDecimal(reader["@Price"])
+                                ProductId = Convert.ToInt32(reader["ProductId"]),
+                                ClientId = Convert.ToInt32(reader["ClientId"]),
+                                NameProduct = reader["NameProduct"].ToString(),
+                                Description = reader["Description"].ToString(),
+                                Price = Convert.ToDecimal(reader["Price"])
                             };
                         }
                     }

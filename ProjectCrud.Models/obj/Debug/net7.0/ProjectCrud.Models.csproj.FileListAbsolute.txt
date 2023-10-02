@@ -1,7 +1,6 @@
 C:\platzi\SolutionCrud\ProjectCrud.Models\bin\Debug\net7.0\ProjectCrud.Models.deps.json
 C:\platzi\SolutionCrud\ProjectCrud.Models\bin\Debug\net7.0\ProjectCrud.Models.dll
 C:\platzi\SolutionCrud\ProjectCrud.Models\bin\Debug\net7.0\ProjectCrud.Models.pdb
-C:\platzi\SolutionCrud\ProjectCrud.Models\obj\Debug\net7.0\ProjectCrud.Models.csproj.AssemblyReference.cache
 C:\platzi\SolutionCrud\ProjectCrud.Models\obj\Debug\net7.0\ProjectCrud.Models.GeneratedMSBuildEditorConfig.editorconfig
 C:\platzi\SolutionCrud\ProjectCrud.Models\obj\Debug\net7.0\ProjectCrud.Models.AssemblyInfoInputs.cache
 C:\platzi\SolutionCrud\ProjectCrud.Models\obj\Debug\net7.0\ProjectCrud.Models.AssemblyInfo.cs

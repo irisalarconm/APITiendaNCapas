@@ -12,11 +12,13 @@ namespace ProjectCrud.UI.Controllers
     {
         IProductService _productService;
         ProductValidator _productValidator;
+        ILogger<ProductController> _logger;
 
-        public ProductController(IProductService service, ProductValidator validator)
+        public ProductController(IProductService service, ProductValidator validator, ILogger<ProductController> logger)
         {
             _productService = service;
             _productValidator = validator;
+            _logger = logger;
         }
 
         [HttpGet]
@@ -28,7 +30,15 @@ namespace ProjectCrud.UI.Controllers
         [HttpGet("{id}")]
         public IActionResult Details(int id)
         {
-            return Ok(_productService.GetById(id));
+            try
+            {
+                return Ok(_productService.GetById(id));
+            }           
+            catch(Exception ex)
+            {
+                _logger.LogError(ex.Message);
+                return BadRequest(ex.Message);
+            }
         }
 
         [HttpPost]

@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjectCrud.DAL", "ProjectC
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjectCrud.BLL", "ProjectCrud.BLL\ProjectCrud.BLL.csproj", "{58DFE81D-E6AF-4FC3-82A4-207FC66130E1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectCrud.API", "ProjectCrud.UI\ProjectCrud.API.csproj", "{4FA2726A-1F5D-46F3-BA1D-A126B8BA074F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjectCrud.API", "ProjectCrud.UI\ProjectCrud.API.csproj", "{4FA2726A-1F5D-46F3-BA1D-A126B8BA074F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

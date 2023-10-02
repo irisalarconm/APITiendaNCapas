@@ -44,3 +44,10 @@ C:\platzi\SolutionCrud\ProjectCrud.UI\obj\Debug\net7.0\refint\ProjectCrud.API.dl
 C:\platzi\SolutionCrud\ProjectCrud.UI\obj\Debug\net7.0\ProjectCrud.API.pdb
 C:\platzi\SolutionCrud\ProjectCrud.UI\obj\Debug\net7.0\ProjectCrud.API.genruntimeconfig.cache
 C:\platzi\SolutionCrud\ProjectCrud.UI\obj\Debug\net7.0\ref\ProjectCrud.API.dll
+C:\platzi\SolutionCrud\ProjectCrud.UI\bin\Debug\net7.0\Serilog.dll
+C:\platzi\SolutionCrud\ProjectCrud.UI\bin\Debug\net7.0\Serilog.Extensions.Logging.dll
+C:\platzi\SolutionCrud\ProjectCrud.UI\bin\Debug\net7.0\Serilog.Extensions.Logging.File.dll
+C:\platzi\SolutionCrud\ProjectCrud.UI\bin\Debug\net7.0\Serilog.Formatting.Compact.dll
+C:\platzi\SolutionCrud\ProjectCrud.UI\bin\Debug\net7.0\Serilog.Sinks.Async.dll
+C:\platzi\SolutionCrud\ProjectCrud.UI\bin\Debug\net7.0\Serilog.Sinks.File.dll
+C:\platzi\SolutionCrud\ProjectCrud.UI\bin\Debug\net7.0\Serilog.Sinks.RollingFile.dll

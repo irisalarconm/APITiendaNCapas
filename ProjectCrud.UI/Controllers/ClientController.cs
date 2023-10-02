@@ -1,6 +1,5 @@
-﻿using FluentValidation;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using ProjectCrud.BLL.Service;
 using ProjectCrud.Models;
 using ProjectCrud.UI.Validators;
@@ -13,62 +12,113 @@ namespace ProjectCrud.UI.Controllers
     {
         IClientService _clientService;
         ClientValidator _clientValidator;
+        ILogger<ClientController> _logger;
 
-        public ClientController(IClientService service, ClientValidator validator)
+        public ClientController(IClientService service, ClientValidator validator, ILogger<ClientController> logger)
         {
             _clientValidator = validator;
             _clientService = service;
+            _logger = logger;         
         }
 
         [HttpGet]
         public IActionResult Index()
         {
-            return Ok(_clientService.GetAll());
+            try
+            {
+                
+                return Ok(_clientService.GetAll());
+            }
+            catch(Exception ex)
+            {
+                _logger.LogError(ex.Message);
+                return BadRequest(ex.Message);
+            }
+                      
         }
 
         [HttpGet("{id}")]
         public IActionResult Details(int id)
         {
-            return Ok(_clientService.GetById(id));
+            try
+            {
+                return Ok(_clientService.GetById(id));
+            }
+            catch(Exception ex)
+            {
+                _logger.LogError(ex.Message);
+                return BadRequest(ex.Message);
+            }
         }
 
         [HttpPost]
         public IActionResult Create(Client client)
         {
-            var validationResult = _clientValidator.Validate(client);
-            if (validationResult.IsValid)
+
+            try
             {
-                return Ok(_clientService.Create(client));
+                var validationResult = _clientValidator.Validate(client);
+                if (validationResult.IsValid)
+                {
+                    var clientCreated = _clientService.Create(client);
+                    return Ok(clientCreated);
+                }
+                else
+                {
+                    
+                    var error = validationResult.Errors;
+                    _logger.LogError(error.ToString());
+                    return BadRequest(error);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                return BadRequest(validationResult.Errors);
+                _logger.LogError(ex.Message);
+                return BadRequest(ex.Message);
             }
-            
         }
 
         [HttpPut("{id}")]
-        public IActionResult Update(int id,Client client)
+        public IActionResult Update(int id, [FromBody]Client client)
         {
-            client.ClientId = id;
-            var validationResult = _clientValidator.Validate(client);
-            if (validationResult.IsValid)
+
+            try
             {
-                return Ok(_clientService.Update(client));
-            }
-            else
+                client.ClientId = id;
+
+                var validationResult = _clientValidator.Validate(client);
+                if (validationResult.IsValid)
+                {
+                    return Ok(_clientService.Update(client));
+                }
+                else
+                {
+                    var error = BadRequest(validationResult.Errors);
+                    _logger.LogError(error.ToString());
+                    return BadRequest(error);
+                }
+            }            
+            catch (Exception ex)
             {
-                return BadRequest(validationResult.Errors);
+                _logger.LogError(ex.Message);
+                return BadRequest(ex.Message);
             }
-            
-            
+
 
         }
 
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
-            return Ok(_clientService?.Delete(id));
+            try
+            {
+                return Ok(_clientService?.Delete(id));
+            }
+            catch(Exception ex)
+            {
+                _logger.LogError(ex.Message);
+                return BadRequest(ex.Message);
+            }
         }
 
     }

@@ -22,7 +22,6 @@ namespace ProjectCrud.Models
             public Status status { get; set; }
 
 
-
     }
         public enum Status
         {
