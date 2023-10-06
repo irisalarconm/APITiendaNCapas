@@ -26,7 +26,6 @@ namespace ProjectCrud.UI.Controllers
         {
             try
             {
-                
                 return Ok(_clientService.GetAll());
             }
             catch(Exception ex)
@@ -66,14 +65,15 @@ namespace ProjectCrud.UI.Controllers
                 else
                 {
                     
-                    var error = validationResult.Errors;
-                    _logger.LogError(error.ToString());
+                    var error = validationResult.Errors.Select(e=>e.ErrorMessage);
+                    var errorMessage = string.Join(", ", error);
+                    _logger.LogError($"Validation failed: {errorMessage}");
                     return BadRequest(error);
                 }
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex.Message);
+                _logger.LogError("Error occurred {ErrorMessage}", ex.Message);
                 return BadRequest(ex.Message);
             }
         }

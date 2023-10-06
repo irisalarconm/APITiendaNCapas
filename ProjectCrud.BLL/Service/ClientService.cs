@@ -1,5 +1,7 @@
-﻿using ProjectCrud.DAL.Data.Repository;
+﻿using Microsoft.Extensions.Logging;
+using ProjectCrud.DAL.Data.Repository;
 using ProjectCrud.Models;
+using Serilog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,33 +13,79 @@ namespace ProjectCrud.BLL.Service
     public class ClientService : IClientService
     {
         private readonly IGenericRepository<Client> _clientRepository;
-        public ClientService(IGenericRepository<Client> clientRepository)
+        ILogger<ClientService> _logger;
+        public ClientService(IGenericRepository<Client> clientRepository, ILogger<ClientService> logger)
         {
+            _logger = logger;
             _clientRepository = clientRepository;   
         }
         public bool Create(Client client)
         {
-            return _clientRepository.Create(client);
+            try
+            {
+                return _clientRepository.Create(client);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.Message);
+                return false;
+            }
         }
 
         public string Delete(int id)
         {
-            return _clientRepository.Delete(id);
+            try
+            {
+                return _clientRepository.Delete(id); 
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.Message);
+                return ex.Message;
+            }
+            
         }
 
         public List<Client> GetAll()
         {
-            return _clientRepository.GetAll();
+            try
+            {
+                return _clientRepository.GetAll();
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.ToString());
+                throw;
+            }
+            
         }
 
         public Client GetById(int id)
         {
-            return _clientRepository.GetById(id);
+            try
+            {
+                return _clientRepository.GetById(id);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.ToString());
+                throw;
+            }
+            
         }
 
         public bool Update(Client client)
         {
-            return _clientRepository.Update(client);
+            try
+            {
+                return _clientRepository.Update(client);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.ToString());
+                throw;
+            }
+            
         }
     }
 }

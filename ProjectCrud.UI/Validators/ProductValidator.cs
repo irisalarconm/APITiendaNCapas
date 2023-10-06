@@ -5,8 +5,11 @@ namespace ProjectCrud.UI.Validators
 {
     public class ProductValidator: AbstractValidator<Product>
     {
-        public ProductValidator()
+        ILogger<ProductValidator> _logger;
+        public ProductValidator(ILogger<ProductValidator> logger)
         {
+            _logger = logger;
+
             RuleFor(product => product.NameProduct).NotEmpty().WithMessage("This field is required");
             RuleFor(product => product.NameProduct).MaximumLength(150).WithMessage("This field is can not has more than 150 characters");
 

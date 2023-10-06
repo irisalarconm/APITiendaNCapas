@@ -4,10 +4,13 @@ using System.ComponentModel.DataAnnotations;
 
 namespace ProjectCrud.UI.Validators
 {
+    
     public class ClientValidator: AbstractValidator<Client>
     {
-        public ClientValidator()
+        ILogger<ClientValidator> _logger;
+        public ClientValidator(ILogger<ClientValidator> logger)
         {
+            _logger = logger;
 
            RuleFor(client => client.NameClient).NotEmpty().WithMessage("This field is required");
             RuleFor(client => client.NameClient).MaximumLength(75).WithMessage("This field is can not has more than 150 characters");
